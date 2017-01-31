@@ -126,6 +126,10 @@ const PluginWrapper = React.createClass({
     this.setState({
       query: '',
       results: [],
+      previousSearches: [
+        ...this.state.previousSearches,
+        this.state.query,
+      ].slice(-10),
     })
   },
 
